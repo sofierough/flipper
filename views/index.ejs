@@ -1,0 +1,35 @@
+<!--Singlepage index-->
+<html>
+	<head>
+		<title>Flipper</title>
+		
+		<!--Angular script + eksterne angular moduler, som skal implementeres-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
+		<script src="javascripts/flipperApp.js"></script>
+		
+		<!--Stylesheets et fra bootstrap + mit eget med små ændringer-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+	<body ng-app="flipperApp">
+		<div id='main' class="container">
+			<!--Menu - under ng-show og ng-hide bruger den authenticated(true eller false) som argument for om knapperne skal vises eller skjules-->
+			<nav class="navbar-fluid navbar-default navbar-fixed-top">
+				<div class="container">
+					    <a class="navbar-brand" href="#"> Flipper </a>
+					    <p class="navbar-text"> Skoleprojekt bygget med MEAN stack</p>
+					    <p class="navbar-right navbar-text" ng-hide="authenticated"><a href="#/login">Login</a> or <a href="#/register">Opret bruger</a></p>
+					    <p class="navbar-right navbar-text" ng-show="authenticated"><a href="#" ng-click="signout()">Log ud</a></p>
+					    <p class="navbar-right navbar-text" ng-show="authenticated">Logget ind som {{current_user}}</p>		
+				</div>
+			</nav>
+			<div class="col-md-offset-2 col-md-8">
+				<!--Under ng-view bliver alle partials sat ind-->
+				<div ng-view>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

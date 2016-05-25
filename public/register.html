@@ -1,0 +1,8 @@
+<!--Partial-->
+<form class="form-auth" ng-submit="register()">
+	<h2>Register</h2>
+	<p class="text-warning">{{error_message}}</p>
+	<input type="username" ng-model="user.username" placeholder="Brugernavn" class="form-control"><br>
+	<input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
+	<input type="submit" value="Opret Bruger" class="btn btn-primary" />
+</form>
